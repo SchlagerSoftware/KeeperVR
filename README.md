@@ -1,2 +1,2 @@
-# TennisVR
-FPS VR Tennis Game
+# KeeperVR
+FPS VR Keeper Game
