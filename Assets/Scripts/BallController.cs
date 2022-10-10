@@ -12,6 +12,7 @@ public class BallController : MonoBehaviour
     private float speed = 0.001f;
 
     private Rigidbody rb;
+    private bool isGoal;
 
     void Start()
     {
@@ -29,15 +30,23 @@ public class BallController : MonoBehaviour
 
     public void Shot()
     {
+        this.isGoal = false;
         Vector3 target = this.GenerateTargetPoint();
         this.rb.AddForce((target - this.transform.position).normalized * this.speed + new Vector3(0, 3f, 0), ForceMode.Impulse);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "GoalLine" && isGoal == false)
+        {
+            this.isGoal = true;
+            print("GOAL!!!!!");
+        }
     }
 
     private Vector3 GenerateTargetPoint()
     {
         Bounds bounds = this.targetPlane.GetComponent<Collider>().bounds;
-        print(bounds.min);
-        print(bounds.max);
         return new Vector3(
         Random.Range(bounds.min.x, bounds.max.x),
         Random.Range(bounds.min.y, bounds.max.y),
