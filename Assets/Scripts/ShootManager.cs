@@ -10,6 +10,13 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private AudioManager audioManager;
 
+    [SerializeField]
+    private GameObject startButton;
+
+    [SerializeField]
+    private GameObject resetButton;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +31,16 @@ public class ShootManager : MonoBehaviour
 
     public void Shot()
     {
+        this.startButton.SetActive(false);
+        this.resetButton.SetActive(true);
         StartCoroutine(ShotProcess());
+    }
+
+    public void Reset()
+    {
+        this.ballController.Reset();
+        this.startButton.SetActive(true);
+        this.resetButton.SetActive(false);
     }
 
 

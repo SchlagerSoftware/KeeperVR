@@ -12,11 +12,19 @@ public class BallController : MonoBehaviour
     private float speed = 0.001f;
 
     private Rigidbody rb;
+    private Vector3 startPosition;
     private bool isGoal;
 
     void Start()
     {
         this.rb = gameObject.GetComponent<Rigidbody>();
+        this.startPosition = gameObject.transform.position;
+    }
+
+    public void Reset()
+    {
+        gameObject.transform.position = this.startPosition;
+        rb.velocity = Vector3.zero;
     }
 
     void Update()
