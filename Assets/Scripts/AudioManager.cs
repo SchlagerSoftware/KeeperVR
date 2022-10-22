@@ -24,9 +24,25 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource menuItemClick;
 
+    [SerializeField]
+    private AudioSource referee;
+
+    [SerializeField]
+    private AudioSource kick;
+
 
     public void PlayMenuItemClick()
     {
         menuItemClick.Play();
+    }
+
+    public void Referee()
+    {
+        referee.Play();
+    }
+
+    public void Kick()
+    {
+        kick.Play();
     }
 }

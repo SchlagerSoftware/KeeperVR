@@ -22,10 +22,10 @@ public class BallController : MonoBehaviour
     void Update()
     {
         //! MOCK UNITY NO START GAME BUTTON
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            this.Shot();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     this.Shot();
+        // }
     }
 
     public void Shot()
