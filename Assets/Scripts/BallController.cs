@@ -15,10 +15,15 @@ public class BallController : MonoBehaviour
     private Vector3 startPosition;
     private bool isGoal;
 
+    private PointManager pointManager;
+    private ShootManager shootManager;
+
     void Start()
     {
         this.rb = gameObject.GetComponent<Rigidbody>();
         this.startPosition = gameObject.transform.position;
+        this.pointManager = GameObject.FindObjectOfType<PointManager>();
+        this.shootManager = GameObject.FindObjectOfType<ShootManager>();
     }
 
     public void Reset()
@@ -27,13 +32,9 @@ public class BallController : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
-    void Update()
+    public void Grabbed()
     {
-        //! MOCK UNITY NO START GAME BUTTON
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     this.Shot();
-        // }
+        this.pointManager.AddSave();
     }
 
     public void Shot()
@@ -41,6 +42,7 @@ public class BallController : MonoBehaviour
         this.isGoal = false;
         Vector3 target = this.GenerateTargetPoint();
         this.rb.AddForce((target - this.transform.position).normalized * this.speed + new Vector3(0, 3f, 0), ForceMode.Impulse);
+        this.pointManager.AddShot();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,7 +50,8 @@ public class BallController : MonoBehaviour
         if (other.tag == "GoalLine" && isGoal == false)
         {
             this.isGoal = true;
-            print("GOAL!!!!!");
+            this.pointManager.AddGoal();
+            this.shootManager.Reset();
         }
     }
 
