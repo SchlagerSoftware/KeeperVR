@@ -10,6 +10,9 @@ public class BallController : MonoBehaviour
     private GameObject targetPlane;
 
     [SerializeField]
+    private GameObject frontKeeperLimiter;
+
+    [SerializeField]
     private float speed = 0.001f;
 
     private Rigidbody rb;
@@ -50,6 +53,7 @@ public class BallController : MonoBehaviour
         this.isGoal = false;
         Vector3 target = this.GenerateTargetPoint();
         this.xRGrabInteractable.enabled = true;
+        this.frontKeeperLimiter.GetComponent<BoxCollider>().isTrigger = true;
         this.rb.AddForce((target - this.transform.position).normalized * this.speed + new Vector3(0, 3f, 0), ForceMode.Impulse);
         this.pointManager.AddShot();
     }
