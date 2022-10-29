@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
@@ -17,10 +18,13 @@ public class BallController : MonoBehaviour
 
     private PointManager pointManager;
     private ShootManager shootManager;
+    private XRGrabInteractable xRGrabInteractable;
 
     void Start()
     {
         this.rb = gameObject.GetComponent<Rigidbody>();
+        this.xRGrabInteractable = gameObject.GetComponent<XRGrabInteractable>();
+
         this.startPosition = gameObject.transform.position;
         this.pointManager = GameObject.FindObjectOfType<PointManager>();
         this.shootManager = GameObject.FindObjectOfType<ShootManager>();
@@ -29,6 +33,7 @@ public class BallController : MonoBehaviour
     public void Reset()
     {
         gameObject.transform.position = this.startPosition;
+        this.xRGrabInteractable.enabled = false;
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
     }
@@ -42,6 +47,7 @@ public class BallController : MonoBehaviour
     {
         this.isGoal = false;
         Vector3 target = this.GenerateTargetPoint();
+        this.xRGrabInteractable.enabled = true;
         this.rb.AddForce((target - this.transform.position).normalized * this.speed + new Vector3(0, 3f, 0), ForceMode.Impulse);
         this.pointManager.AddShot();
     }
