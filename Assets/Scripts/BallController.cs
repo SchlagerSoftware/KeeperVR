@@ -29,6 +29,7 @@ public class BallController : MonoBehaviour
     public void Reset()
     {
         gameObject.transform.position = this.startPosition;
+        rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
     }
 
