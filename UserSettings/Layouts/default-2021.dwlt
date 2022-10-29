@@ -460,7 +460,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -968,7 +968,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 22720000
     m_LastClickedInstanceID: 29218
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000f6940000c066000000670000ca660000c6670000
+    m_ExpandedInstanceIDs: c6230000f6940000c066000000670000ca660000c6670000487d00005c7d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
