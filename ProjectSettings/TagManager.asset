@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - GoalLine
+  - Ball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Keeper
   - Water
   - UI
   - 
