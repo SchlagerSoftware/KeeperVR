@@ -32,6 +32,7 @@ public class BallController : MonoBehaviour
 
     public void Reset()
     {
+        this.gameObject.GetComponent<SphereCollider>().enabled = true;
         gameObject.transform.position = this.startPosition;
         this.xRGrabInteractable.enabled = false;
         rb.angularVelocity = Vector3.zero;
@@ -40,6 +41,7 @@ public class BallController : MonoBehaviour
 
     public void Grabbed()
     {
+        this.gameObject.GetComponent<SphereCollider>().enabled = false;
         this.pointManager.AddSave();
     }
 
