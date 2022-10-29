@@ -2219,7 +2219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239263573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -15503,6 +15503,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1104099523}
+    - target: {fileID: 853998949814118112, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
+        type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 853998949814118113, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
       propertyPath: m_Enabled
@@ -15516,7 +15521,7 @@ PrefabInstance:
     - target: {fileID: 853998949814118118, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
       propertyPath: m_LineLength
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 853998949814118119, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
@@ -15531,7 +15536,7 @@ PrefabInstance:
     - target: {fileID: 853998950416351170, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
       propertyPath: m_LineLength
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 853998950416351171, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
@@ -15543,6 +15548,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1104099523}
+    - target: {fileID: 853998950416351180, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
+        type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 853998950416351181, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
       propertyPath: m_Enabled
