@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlane: {fileID: 2031999724}
   frontKeeperLimiter: {fileID: 975561924}
-  speed: 5
+  speed: 3.5
 --- !u!54 &181037512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14181,6 +14181,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853998949406152138, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
+        type: 3}
+      propertyPath: m_TurnSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 853998949406152139, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
+        type: 3}
+      propertyPath: m_MoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 853998949406152142, guid: 0bb9a3e0fe78c5b4b83de668d4bd867a,
         type: 3}
