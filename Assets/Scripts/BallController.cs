@@ -19,12 +19,17 @@ public class BallController : MonoBehaviour
     private Vector3 startPosition;
     private bool isGoal;
 
+    private float userSpeed;
+
     private PointManager pointManager;
     private ShootManager shootManager;
     private XRGrabInteractable xRGrabInteractable;
 
     void Start()
     {
+        this.userSpeed = PlayerPrefs.GetFloat(PrefsEnumClass.BALL_SPEED);
+        this.speed = this.speed + (this.speed * this.userSpeed);
+        print(userSpeed);
         this.rb = gameObject.GetComponent<Rigidbody>();
         this.xRGrabInteractable = gameObject.GetComponent<XRGrabInteractable>();
 
